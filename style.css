@@ -1,35 +1,46 @@
 
+* {
+    font-family: "Fraunces", serif;
+    font-optical-sizing: auto;
+    color: #fff;
+    }
+
 header {
     
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3rem;
     color: #fff;
     display: flex;
+    background: linear-gradient(to bottom, rgb(21, 13, 26),rgb(22, 12, 25) );
     justify-content: space-between;
     align-items: center;
+    transition: 0.6s;
+    z-index: 9999; /* Ensure the header is on top of other content */
+}
+l{
+    height: 200vh;
 }
 
 .home-button {
     
-    color: #fff;
+    color: transparent;
     border-radius: 10px; 
     border: 2px solid transparent; /* Establece un borde transparente inicialmente */
-    padding: 2px 15px;
+    padding: 0px;
     text-decoration: none;
     display: inline-block;
     transition: border-color 0.3s; /* Transición para suavizar el cambio de color del borde */
 }
-
-.home-button:hover {
-    border-color: #fff;
-    border-radius: 10px; 
-}
-
-
 
 .menu-button:hover {
     background-color: #fff;
     color: #1a1a35;
     border-color: #fff;
     border-radius: 20px; 
+    
 }
 
 
@@ -56,21 +67,148 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background: #2d3240 linear-gradient(to bottom, #1a1a35, #f89179);
+    background: linear-gradient(to bottom,rgb(22, 12, 25), rgb(21, 13, 26),rgb(22, 12, 25),rgb(34, 14, 28),
+    rgb(44, 20, 20),  rgb(64, 28, 15));
     background-repeat: no-repeat; /* Adjust background color */
     z-index: -1; /* Place it behind other content */
   }
 
-
-  
- 
+.some-element {
+    background: linear-gradient(var(--bg-stop-1), var(--bg-stop-2), var(--bg-stop-3), var(--bg-stop-4));
+}
+  .sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3rem;;
+    width: 100%;
+    background-color: transparent;
+    border-bottom: 3px solid #fff;
+    
+    
+}
   .menu-button {
     color: #fff;
     background-color: transparent;
     border: none;
     cursor: pointer;
-    padding: 10px;
+    padding: 0px;
     font-size: 16px;
   }
   
-  
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    list-style: none;
+     background: linear-gradient(to bottom,rgb(22, 12, 25), rgb(21, 13, 26),rgb(22, 12, 25),rgb(34, 14, 28),
+    rgb(44, 20, 20),  rgb(64, 28, 15));
+    width: 100%; /* Abarca todo el ancho */
+    z-index: 1000;
+    border-bottom: 3px solid #ddd;
+    animation-name: dropdown-animation;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+}
+
+
+
+@keyframes dropdown-animation {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+.dropdown-menu li {
+    color: #fff;
+}
+
+.dropdown-menu li a {
+    text-align: center;
+    margin-top: 1px;
+    margin-right: 60px;
+    display: block;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Show the dropdown menu when .menu-visible is added */
+.menu-visible .dropdown-menu {
+    display: block;
+}
+
+.menu-visible header {
+    height: 300px; /* Ajusta el tamaño según sea necesario */
+}
+
+.hidden {
+    display: none;
+}
+
+#infoBox {
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* arriba es el header*/
+
+
+
+
+.container2 {
+    margin-top: 5.5rem; /* Espacio para el header */
+    padding: 1rem;
+    text-align: center;
+}
+
+.title2 {
+    font-size: 5rem;
+    margin: 1rem 0;
+    width: 100%;
+    word-wrap: break-word;
+}
+.profile2 {
+    position: relative;
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.parallax2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-photo2 {
+    max-width: 100%;
+    height: auto;
+    margin: 1rem 0;
+    transform: translateY(0);
+    transition: transform 0.1s ease-out;
+}
+
+.description2 {
+    font-size: 1.2rem;
+    max-width: 800px; /* Limita el ancho del texto descriptivo */
+    margin: 0 auto;
+    padding: 0 1rem;
+    transform: translateY(0);
+    transition: transform 0.1s ease-out;
+}
